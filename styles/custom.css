@@ -1,0 +1,226 @@
+:root {
+  --md-primary-bg-color: #fff;
+  --md-accent-fg-color: #000;
+  --md-default-bg-color: #fff;
+  --md-text-color: #000;
+  --md-typeset-a-color: #000;
+}
+
+/* ------------------------------------- 
+   Header 
+-------------------------------------- */
+.custom-top-header {
+  background: white;
+  
+}
+
+.custom-header-container {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #000;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  max-height: 150px;
+  margin-right: 1rem;
+}
+
+.header-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+}
+
+/* Responsive header */
+@media (max-width: 700px) {
+  .custom-header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-logo {
+    margin: 0 0 1rem;
+  }
+}
+
+/* Hide default Material header */
+.md-header {
+  display: none !important;
+}
+
+/* -------------------------------------
+   Invisible Nav Bar
+-------------------------------------- */
+.custom-nav {
+  width: 100%;
+  background-color: white; /* Matches page background */
+  display: flex;
+  justify-content: center; 
+  padding: 0.5rem 1rem !important;
+  border-bottom: none;
+}
+/* Nav layout and spacing */
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; 
+  gap: 2rem; /* ← restores spacing between links */
+}
+.nav-link {
+  margin: 0 1rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------
+   Page Content
+-------------------------------------- */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* -------------------------------------
+   Footer Styling
+-------------------------------------- */
+.md-footer-meta {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2;
+}
+
+.md-footer-meta a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.md-footer-meta a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------
+   Sidebar Layout: Force Equal Spacing
+-------------------------------------- */
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  visibility: hidden;
+  pointer-events: none;
+  width: 240px;
+  max-width: 240px;
+  flex: 0 0 240px;
+}
+
+.md-sidebar--secondary nav {
+  display: none;
+}
+
+/* Collapse both sidebars on small screens */
+@media (max-width: 959px) {
+  .md-sidebar--primary,
+  .md-sidebar--secondary {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  .md-main__inner {
+    display: block !important;
+  }
+
+  .md-content {
+    margin: 0 auto !important;
+    padding: 0 1rem;
+  }
+}
+
+/* Force 3-column layout on wide screens */
+@media (min-width: 960px) {
+  .md-main__inner {
+    display: grid !important;
+    grid-template-columns: 240px 1fr 240px !important;
+    max-width: 100%;
+  }
+
+  .md-sidebar--primary {
+    grid-column: 1;
+  }
+
+  .md-content {
+    grid-column: 2;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .md-sidebar--secondary {
+    grid-column: 3;
+  }
+
+  .md-sidebar--primary,
+  .md-sidebar--secondary {
+    display: block !important;
+  }
+
+  .md-sidebar--secondary nav {
+    display: none !important;
+  }
+}
+
+
+.md-main > .md-main__inner {
+  border-top: none !important;
+}
+/* Remove unwanted line between header and nav */
+.custom-nav {
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Make inline links underlined in content */
+.md-typeset a {
+  text-decoration: underline;
+  color: #000; /* Or use your preferred link color */
+}
+
+.md-typeset a:hover {
+  text-decoration: none;
+  color: #555; /* Optional hover styling */
+}
+
+
+/* Style for header text */
+.header-text h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #000; 
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 0.75rem; /* Make this smaller as requested */
+  color: #000;
+}
