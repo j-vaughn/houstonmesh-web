@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Custom white header -->
+  <div class="custom-top-header">
+    <div class="md-grid custom-header-container">
+      <img src="/assets/logo.png" alt="Houston Mesh Logo" class="header-logo" />
+      <div class="header-text">
+        <h1>Houston Mesh</h1>
+        <p>Building a resilient Meshtastic® network in the Houston area</p>
+      </div>
+    </div>
+  </div>
+
+<!-- Black nav bar -->
+<div class="custom-nav-container">
+  <div class="custom-nav">
+    <!--<a class="nav-link" href="/">Home</a> | 
+    <a class="nav-link" href="/discord">Join our Discord</a>-->
+  </div>
+</div>
+
+
+  <!-- Page content -->
+  <div class="md-grid content-wrapper">
+    {% block page %}
+      {% if page and page.content %}
+        {{ page.content }}
+      {% endif %}
+    {% endblock %}
+  </div>
+{% endblock %}
