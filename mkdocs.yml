@@ -1,8 +1,11 @@
 site_name: Houston Mesh
+
 theme:
   name: material
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
-  palette:
-    scheme: slate
-    primary: black
+  custom_dir: overrides
+  features:
+   - content.hide.title  # <-- global title hiding
+
+extra_css:
+  - styles/custom.css
+
